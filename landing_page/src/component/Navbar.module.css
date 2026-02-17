@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.links li {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.links li:hover {
+  color: #2563eb;
+}
+
+.btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+}

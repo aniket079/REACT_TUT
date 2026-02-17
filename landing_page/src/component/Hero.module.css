@@ -1,0 +1,45 @@
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.primary {
+  background-color: white;
+  color: #2563eb;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+}

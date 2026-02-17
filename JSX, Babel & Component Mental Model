@@ -1,0 +1,95 @@
+React.createElement("h1", null, "Hello")
+
+Very hard to read.
+
+Solution → JSX
+JSX makes it look like HTML:
+
+Much cleaner 
+More readable 
+Less syntax burden 
+
+
+JSX (JavaScript XML) is a syntax extension for JavaScript that allows writing HTML-like code inside JavaScript.
+
+JSX is NOT HTML
+JSX is NOT understood by browsers
+JSX must be converted to JavaScript
+
+<h1>Hello</h1> ----->  React.createElement("h1", null, "Hello")
+So JSX is syntactic sugar over React.createElement
+
+
+
+
+Babel as a Transcompiler
+
+Since browsers do NOT understand JSX, we need a converter.
+
+What is Babel?
+Babel is a JavaScript transcompiler that converts modern JS + JSX into browser-compatible JavaScript.
+
+
+It converts:
+
+JSX → React.createElement
+ES6 → ES5
+Optional chaining → safe JS
+
+
+Why Not Use Babel CDN in Production?
+
+Slow (compiles in browser)
+Large file size
+Not optimized
+
+Production uses:
+Vite
+Webpack
+esbuild
+
+
+Functions Analogy for React Component:
+
+function Greeting({ name }) {
+  return <h1>Hello {name}</h1>;
+}
+
+<Greeting name="Aniket" />
+<Greeting name="Rahul" />
+<Greeting name="Priya" />
+
+function Card({ title, children }) {
+  return (
+    <div className="card">
+      <h2>{title}</h2>
+      {children}
+    </div>
+  );
+}
+
+<Card title="Profile">
+  <p>User details here</p>
+</Card>
+
+
+
+JSX → Sugar syntax
+Babel → Converts JSX to JS
+Component → Function returning JSX
+Props → Function arguments
+Element → Object describing UI
+Reusability → Components + Props
+
+
+
+
+
+Why Vite Instead of Create React App (CRA)?
+
+It internally uses:
+
+Webpack
+Babel
+Large configuration
+Heavy dependency tree

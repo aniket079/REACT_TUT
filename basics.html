@@ -1,0 +1,30 @@
+<div id="root"></div>
+
+<script>
+  const root = document.getElementById("root");
+  let count = 0;
+
+  function render() {
+    root.innerHTML = `
+      <h1>${count}</h1>
+      <button onclick="increment()">Increase</button>
+    `;
+  }
+
+  function increment() {
+    count++;
+    render();
+  }
+
+  render();
+</script>
+
+
+
+<!-- Entire HTML is replaced on every change
+
+Hard to scale
+
+Messy state handling
+
+Manual DOM manipulation -->

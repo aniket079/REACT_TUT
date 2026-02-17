@@ -1,0 +1,147 @@
+Story Behind DOM Re-Rendering Optimization
+
+Traditional DOM Problem
+The real DOM is slow because:
+
+DOM operations trigger:
+
+Layout recalculation
+Paint
+Reflow
+Browser must recalculate styles
+Imagine updating 1000 rows — that’s expensive.
+
+React Solution: Virtual DOM
+React does NOT directly update real DOM
+
+Create Virtual DOM (JS object representation)
+Compare old vs new (Diffing algorithm)
+Update only changed parts
+
+React compares and updates only text node.
+Not entire page.
+This is called Reconciliation.
+
+
+<!-- React.createElement (Core of React)
+JSX--->compiles--->React.createElement() -->
+
+Syntax
+React.createElement(type, props, ...children)
+
+<div>
+  <h1>Hello</h1>
+  <p>Welcome</p>
+</div>
+   |
+   |
+   |
+   ^
+React.createElement(
+  "div",
+  null,
+  React.createElement("h1", null, "Hello"),
+  React.createElement("p", null, "Welcome")
+)
+
+
+
+
+Virtual DOM 
+
+<h1>Hello</h1>
+
+{
+  type: "h1",
+  props: {
+    children: "Hello"
+  }
+}
+
+
+State Change
+     ↓
+New Virtual DOM
+     ↓
+Diffing
+     ↓
+Update Real DOM
+
+
+
+A React Element is:
+
+A plain JavaScript object describing what should appear on the screen.
+
+It is NOT:
+A DOM node
+A component instance
+
+
+It is just a description.
+
+const element = React.createElement("h1", null, "Hello");
+console.log(element);
+
+
+
+
+{
+  $$typeof: Symbol(react.element),
+  type: "h1",
+  key: null,
+  ref: null,
+  props: { children: "Hello" },
+  _owner: null,
+  _store: {}
+}
+
+
+| Property | Meaning                     |
+| -------- | --------------------------- |
+| $$typeof | Identifies as React element |
+| type     | Tag or component            |
+| key      | Used for list diffing       |
+| ref      | Reference to DOM            |
+| props    | Attributes + children       |
+
+
+$$typeof as Security Measure
+React uses:
+$$typeof: Symbol(react.element)
+
+
+Why?
+
+Because React must ensure:
+The object is a genuine React element.
+Security Issue Without $$typeof
+
+If React trusted any object like:
+
+{
+  type: "div",
+  props: { children: "Hacked" }
+}
+
+Malicious code could inject fake elements.
+
+
+
+
+JSX
+ ↓ (Babel)
+React.createElement
+ ↓
+React Element (JS Object)
+ ↓
+Virtual DOM
+ ↓
+Diffing Algorithm
+ ↓
+Real DOM Update
+
+
+
+
+

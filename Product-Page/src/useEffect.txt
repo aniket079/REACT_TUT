@@ -1,0 +1,55 @@
+Component Lifecycle (Functional Component Version)
+
+Before Hooks (Class Components), lifecycle had:
+
+componentDidMount
+componentDidUpdate
+componentWillUnmount
+
+In functional components, we use:
+useEffect to handle lifecycle events.
+
+1. Mount → Component appears
+2. Update → State/props change
+3. Unmount → Component removed
+
+
+useEffect is a React Hook that lets you perform side effects in function components.
+
+useEffect(() => {
+  // side effect code
+}, [dependencies]);
+
+
+Understanding Dependency Array;
+
+Case 1: No Dependency Array
+useEffect(() => {
+  console.log("Runs every render");
+});
+
+On mount
+On every re-render
+
+
+Case 2: Empty Dependency Array
+useEffect(() => {
+  console.log("Runs only once");
+}, []);
+Runs:
+
+Only on mount
+Equivalent to:
+componentDidMount
+
+Case 3: One Dependency
+useEffect(() => {
+  console.log("Runs when count changes");
+}, [count]);
+
+Runs:
+
+On mount
+Whenever count changes
+
+

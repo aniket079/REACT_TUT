@@ -1,0 +1,101 @@
+Combine files
+Convert JSX to JS
+Optimize code
+Minify code
+Handle modules
+That tool is called a Bundler.
+
+
+
+Parcel is a:
+Zero-configuration web application bundler.
+
+Meaning:
+
+No complex config file needed
+Automatically detects files
+Automatically bundles assets
+Unlike Webpack, it doesn’t require heavy configuration.
+
+
+
+
+Development Build vs Production Build
+npm run dev     (Vite)
+npm start       (Parcel)
+
+Features:
+
+Not optimized
+Large file size
+Source maps enabled
+Helpful error messages
+React warnings enabled
+Fast refresh (HMR)
+
+npm run build
+
+Features:
+
+Minified code
+Smaller file size
+No warnings
+Faster performance
+Optimized assets
+Tree shaking applied
+
+Why Separate Builds?
+
+Because:
+
+Developers need debugging tools
+Users need fast performance
+You cannot ship development build to users.
+
+
+You deploy the dist folder, not your source code.
+
+Example deployment:
+
+Netlify
+Vercel
+Render
+Firebase
+
+They host your dist folder.
+
+
+| Feature                 | Global CSS  | CSS Module       |
+| ----------------------- | ----------- | ---------------- |
+| Scoped                  | ❌           | ✅                |
+| Class conflict possible | ✅           | ❌                |
+| Hashing                 | ❌           | ✅                |
+| Best for                | Base styles | Component styles |
+
+
+
+What is ESLint?
+
+ESLint is a static code analysis tool that detects code issues and enforces coding standards.
+
+It checks:
+
+Unused variables
+
+Undefined variables
+
+Wrong patterns
+
+Code style issues
+
+Example
+const x = 5;
+
+
+If x not used → ESLint warning.
+
+Why Important?
+Prevent bugs
+Maintain code quality
+Industry standard
+Improves team collaboration
