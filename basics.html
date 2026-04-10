@@ -5,18 +5,46 @@
   let count = 0;
 
   function render() {
+    console.log("calling render function",count);
     root.innerHTML = `
       <h1>${count}</h1>
       <button onclick="increment()">Increase</button>
+      <button onclick="reset()>Reset"</button>
     `;
   }
 
   function increment() {
     count++;
     render();
+    console.log("calling increment");
+  }
+
+  function reset(){
+    console.log("reset is called ")
+    count=0;
+    render();
   }
 
   render();
+  let time =1000;
+ let intervalId= setInterval(()=>{
+    // reset();
+    time+=1000;
+    if(count>=4){
+      clearInterval(intervalId);
+    }
+    increment();
+    console.log("running setInterval")
+  },time);
+
+
+
+  // setTimeout(()=>{
+  //    console.log("running setTimeout");
+  // },5000)
+
+  // setInterval(()=>{},time in ms);
+
 </script>
 
 
