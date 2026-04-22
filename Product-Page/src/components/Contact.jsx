@@ -3,10 +3,10 @@ import { useEffect } from "react";
 function Contact() {
 
   useEffect(() => {
-    console.log("Mounted");
+    console.log("Mounted contact");
 
     return () => {
-      console.log("Unmounted");
+      console.log("Unmounted contact");
     };
 
   }, []);

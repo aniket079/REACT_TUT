@@ -8,12 +8,11 @@ function Contact() {
   });
 
   function handleChange(e) {
-    formData.email=e.target.value;
-    // setFormData({
-    //   // ...formData,
-    //   // [e.target.name]: e.target.value
-    //   
-    // });
+    setFormData({
+      // ...formData,
+      // [e.target.name]: e.target.value
+      
+    });
     setFormData(formData);
     console.log("formData",formData);
   }
@@ -74,7 +73,7 @@ function Contact() {
 
   return (
     <section style={sectionStyle}>
-      <form onSubmit={handleSubmit} style={formStyle}>
+      <form onSubmitl={handleSubmit} style={formStyle}>
         <h2 style={headingStyle}>Contact Me</h2>
 
         <input

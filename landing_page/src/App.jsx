@@ -11,15 +11,14 @@ import List from "./component/List";
 function App() {
   return (
     <>
-      {/* <Navbar />
+      <Navbar />
       <Hero />
-      <Features />
-      <CTA /> */}
-      {/* <Contact/> */}
-      {/* <Contact2/> */}
-      {/* <Footer /> */}
-      {/* <Oneway/> */}
-      <Prevkey></Prevkey>
+      <Features/>
+      <CTA /> 
+      <Contact2/> 
+      <Footer /> 
+      {/* <Oneway/>
+      {/* <Prevkey></Prevkey> */}
       {/* <List></List> */}
     </>
   );
